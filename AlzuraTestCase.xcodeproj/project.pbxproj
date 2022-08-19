@@ -7,25 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2A38A8E28AEBCB000E38958 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A38A8C28AEBCB000E38958 /* OrderTableViewCell.swift */; };
+		A2A38A8F28AEBCB000E38958 /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A38A8D28AEBCB000E38958 /* OrderTableViewCell.xib */; };
+		A2A38A9328AF067400E38958 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A38A9228AF067400E38958 /* AuthenticationManager.swift */; };
 		A2BC681528AD3F29003EFC28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BC681428AD3F29003EFC28 /* AppDelegate.swift */; };
 		A2BC681728AD3F29003EFC28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BC681628AD3F29003EFC28 /* SceneDelegate.swift */; };
-		A2BC681928AD3F29003EFC28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BC681828AD3F29003EFC28 /* ViewController.swift */; };
+		A2BC681928AD3F29003EFC28 /* AuthenticationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BC681828AD3F29003EFC28 /* AuthenticationVC.swift */; };
 		A2BC681C28AD3F29003EFC28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2BC681A28AD3F29003EFC28 /* Main.storyboard */; };
 		A2BC681F28AD3F29003EFC28 /* AlzuraTestCase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2BC681D28AD3F29003EFC28 /* AlzuraTestCase.xcdatamodeld */; };
 		A2BC682128AD3F2D003EFC28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2BC682028AD3F2D003EFC28 /* Assets.xcassets */; };
 		A2BC682428AD3F2D003EFC28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2BC682228AD3F2D003EFC28 /* LaunchScreen.storyboard */; };
+		A2BC683228AD516B003EFC28 /* AlzuraAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BC683128AD516B003EFC28 /* AlzuraAPIManager.swift */; };
+		A2BC683528AD544D003EFC28 /* Alzura+UIColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BC683428AD544D003EFC28 /* Alzura+UIColors.swift */; };
+		A2BC683828AD5558003EFC28 /* OrdersListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BC683728AD5558003EFC28 /* OrdersListVC.swift */; };
+		A2BC683C28AD5928003EFC28 /* ASStyleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BC683B28AD5928003EFC28 /* ASStyleHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A2A38A8C28AEBCB000E38958 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
+		A2A38A8D28AEBCB000E38958 /* OrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableViewCell.xib; sourceTree = "<group>"; };
+		A2A38A9228AF067400E38958 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		A2BC681128AD3F29003EFC28 /* AlzuraTestCase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlzuraTestCase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2BC681428AD3F29003EFC28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2BC681628AD3F29003EFC28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A2BC681828AD3F29003EFC28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A2BC681828AD3F29003EFC28 /* AuthenticationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationVC.swift; sourceTree = "<group>"; };
 		A2BC681B28AD3F29003EFC28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A2BC681E28AD3F29003EFC28 /* AlzuraTestCase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AlzuraTestCase.xcdatamodel; sourceTree = "<group>"; };
 		A2BC682028AD3F2D003EFC28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2BC682328AD3F2D003EFC28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2BC682528AD3F2D003EFC28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2BC683128AD516B003EFC28 /* AlzuraAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlzuraAPIManager.swift; sourceTree = "<group>"; };
+		A2BC683428AD544D003EFC28 /* Alzura+UIColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alzura+UIColors.swift"; sourceTree = "<group>"; };
+		A2BC683728AD5558003EFC28 /* OrdersListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersListVC.swift; sourceTree = "<group>"; };
+		A2BC683B28AD5928003EFC28 /* ASStyleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASStyleHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +53,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A2A38A9028AEBCBC00E38958 /* OrderTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A2A38A8C28AEBCB000E38958 /* OrderTableViewCell.swift */,
+				A2A38A8D28AEBCB000E38958 /* OrderTableViewCell.xib */,
+			);
+			path = OrderTableViewCell;
+			sourceTree = "<group>";
+		};
+		A2A38A9128AF065200E38958 /* AuthenticationServices */ = {
+			isa = PBXGroup;
+			children = (
+				A2A38A9428AF102700E38958 /* KeychainServices */,
+				A2A38A9228AF067400E38958 /* AuthenticationManager.swift */,
+			);
+			path = AuthenticationServices;
+			sourceTree = "<group>";
+		};
+		A2A38A9428AF102700E38958 /* KeychainServices */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = KeychainServices;
+			sourceTree = "<group>";
+		};
 		A2BC680828AD3F28003EFC28 = {
 			isa = PBXGroup;
 			children = (
@@ -58,11 +97,13 @@
 		A2BC681328AD3F29003EFC28 /* AlzuraTestCase */ = {
 			isa = PBXGroup;
 			children = (
+				A2A38A9128AF065200E38958 /* AuthenticationServices */,
+				A2BC683628AD553C003EFC28 /* OrdersListScene */,
 				A2BC682E28AD4082003EFC28 /* Application */,
 				A2BC682D28AD4009003EFC28 /* Resources */,
 				A2BC682C28AD4000003EFC28 /* API */,
 				A2BC682B28AD3FEE003EFC28 /* AuthenticationScene */,
-				A2BC681828AD3F29003EFC28 /* ViewController.swift */,
+				A2BC681828AD3F29003EFC28 /* AuthenticationVC.swift */,
 				A2BC681A28AD3F29003EFC28 /* Main.storyboard */,
 				A2BC681D28AD3F29003EFC28 /* AlzuraTestCase.xcdatamodeld */,
 			);
@@ -88,6 +129,8 @@
 		A2BC682D28AD4009003EFC28 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A2BC683A28AD58F5003EFC28 /* CustomViews */,
+				A2BC683328AD5439003EFC28 /* Extensions */,
 				A2BC682028AD3F2D003EFC28 /* Assets.xcassets */,
 				A2BC682228AD3F2D003EFC28 /* LaunchScreen.storyboard */,
 				A2BC682528AD3F2D003EFC28 /* Info.plist */,
@@ -114,8 +157,42 @@
 		A2BC683028AD4163003EFC28 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A2BC683128AD516B003EFC28 /* AlzuraAPIManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A2BC683328AD5439003EFC28 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A2BC683428AD544D003EFC28 /* Alzura+UIColors.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A2BC683628AD553C003EFC28 /* OrdersListScene */ = {
+			isa = PBXGroup;
+			children = (
+				A2BC683928AD5897003EFC28 /* TableView */,
+				A2BC683728AD5558003EFC28 /* OrdersListVC.swift */,
+			);
+			path = OrdersListScene;
+			sourceTree = "<group>";
+		};
+		A2BC683928AD5897003EFC28 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				A2A38A9028AEBCBC00E38958 /* OrderTableViewCell */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		A2BC683A28AD58F5003EFC28 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				A2BC683B28AD5928003EFC28 /* ASStyleHeaderView.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +255,7 @@
 			files = (
 				A2BC682428AD3F2D003EFC28 /* LaunchScreen.storyboard in Resources */,
 				A2BC682128AD3F2D003EFC28 /* Assets.xcassets in Resources */,
+				A2A38A8F28AEBCB000E38958 /* OrderTableViewCell.xib in Resources */,
 				A2BC681C28AD3F29003EFC28 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,10 +267,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2BC681928AD3F29003EFC28 /* ViewController.swift in Sources */,
+				A2BC683228AD516B003EFC28 /* AlzuraAPIManager.swift in Sources */,
+				A2BC681928AD3F29003EFC28 /* AuthenticationVC.swift in Sources */,
 				A2BC681528AD3F29003EFC28 /* AppDelegate.swift in Sources */,
+				A2A38A9328AF067400E38958 /* AuthenticationManager.swift in Sources */,
 				A2BC681F28AD3F29003EFC28 /* AlzuraTestCase.xcdatamodeld in Sources */,
+				A2BC683828AD5558003EFC28 /* OrdersListVC.swift in Sources */,
+				A2BC683528AD544D003EFC28 /* Alzura+UIColors.swift in Sources */,
+				A2A38A8E28AEBCB000E38958 /* OrderTableViewCell.swift in Sources */,
 				A2BC681728AD3F29003EFC28 /* SceneDelegate.swift in Sources */,
+				A2BC683C28AD5928003EFC28 /* ASStyleHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
