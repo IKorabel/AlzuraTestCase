@@ -12,11 +12,12 @@ enum SegueHelper {
    case toLoginPage
     
     var destinationVC: UINavigationController {
+        let sceneDelegate = SceneDelegate()
         switch self {
         case .toOrders:
-            return SceneDelegate.ordersNavigationController
+            return sceneDelegate.ordersNavigationController
         case .toLoginPage:
-            return SceneDelegate.authNavigationController
+            return sceneDelegate.authNavigationController
         }
     }
     

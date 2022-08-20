@@ -45,6 +45,7 @@ class AuthenticationVC: UIViewController {
         loginTextField.lineHeight = 1.0 // bottom line height in points
         loginTextField.selectedLineHeight = 2.0
         loginTextField.iconImage = UIImage(systemName: "at")
+        loginTextField.keyboardType = .emailAddress
         loginTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         return loginTextField
     }()
@@ -57,6 +58,7 @@ class AuthenticationVC: UIViewController {
         passwordTextField.selectedTitleColor = .systemBlue
         passwordTextField.lineHeight = 1.0 // bottom line height in points
         passwordTextField.selectedLineHeight = 2.0
+        passwordTextField.isSecureTextEntry = true
         passwordTextField.iconImage = UIImage(systemName: "signature")
         passwordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         return passwordTextField
@@ -83,9 +85,15 @@ class AuthenticationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setKeyboardSettings()
+        commonInit()
+        setBehaviourForButtonAccordingToValidation(isValid: false)
+        // Do any additional setup after loading the view.
+    }
+    
+    private func commonInit()  {
         view.backgroundColor = .white
         title = "Welcome to Alzura"
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidLayoutSubviews() {
@@ -106,9 +114,24 @@ class AuthenticationVC: UIViewController {
         ])
     }
     
+    private func setBehaviourForButtonAccordingToValidation(isValid: Bool) {
+        signInButton.isEnabled = isValid ? true : false
+        signUpButton.isEnabled = isValid ? true : false
+        signUpButton.setBackgroundColor( isValid ?
+            .systemGreen :
+            .systemGreen.withAlphaComponent(0.5), forState: .normal)
+        signInButton.setBackgroundColor( !isValid ?
+                                        .systemBlue.withAlphaComponent(0.5) :
+                                        .systemBlue, forState: .normal)
+    }
+    
     //MARK: Actions
     
     @objc private func didClickedOnSignUpButton(_ sender: UIButton) {
+        guard !loginTextField.text!.isEmpty && !passwordTextField.text!.isEmpty else {
+            AlertManager.createErrorAlert(vc: self, errorTheme: "Authentication Error", errorDescription: "Fill in the TextFields")
+            return
+        }
         authManager.signUp(user: .init(email: loginTextField.text!,
                                        password: passwordTextField.text!)) { authResult in
             switch authResult {
@@ -121,6 +144,10 @@ class AuthenticationVC: UIViewController {
     }
     
     @objc private func didClickedOnSignInButton(_ sender: UIButton) {
+        guard !loginTextField.text!.isEmpty && !passwordTextField.text!.isEmpty else {
+            AlertManager.createErrorAlert(vc: self, errorTheme: "Authentication Error", errorDescription: "Fill in the TextFields")
+            return
+        }
         authManager.signIn(user: .init(email: loginTextField.text!, password: passwordTextField.text!)) { signInResult in
             switch signInResult {
             case .success(_):
@@ -132,6 +159,7 @@ class AuthenticationVC: UIViewController {
     }
 }
 
+//MARK: TextFieldDelegate
 extension AuthenticationVC: UITextFieldDelegate {
     
     @objc private func textFieldDidChange(_ textField: UITextField) {
@@ -140,22 +168,44 @@ extension AuthenticationVC: UITextFieldDelegate {
         switch textField {
         case loginTextField:
             loginTextField.errorMessage = !ValidationManager.isValidEmail(text) ? "Invalid email" : nil
+            setBehaviourForButtonAccordingToValidation(isValid: ValidationManager.isValidEmail(text))
         case passwordTextField:
             passwordTextField.errorMessage = !ValidationManager.isPasswordValid(password: text) ? "Minumum 8 symbols" : nil
+            setBehaviourForButtonAccordingToValidation(isValid: ValidationManager.isPasswordValid(password: text))
         default:
             break
         }
-//        if loginTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
-//            signInButton.isEnabled = false
-//            signUpButton.isEnabled = false
-//            signUpButton.setBackgroundColor(.systemGreen.withAlphaComponent(0.1), forState: .normal)
-//            signInButton.setBackgroundColor(.systemBlue.withAlphaComponent(0.1), forState: .normal)
-//        } else {
-//            signInButton.isEnabled = true
-//            signUpButton.isEnabled = true
-//            signUpButton.setBackgroundColor(.systemGreen.withAlphaComponent(1), forState: .normal)
-//            signInButton.setBackgroundColor(.systemBlue.withAlphaComponent(1), forState: .normal)
-//        }
     }
     
+}
+
+//MARK: KeyboardSettings
+
+extension AuthenticationVC {
+    
+    func setKeyboardSettings() {
+        setupToolbar(textField: loginTextField)
+        setupToolbar(textField: passwordTextField)
+    }
+    
+    func setupToolbar(textField: UITextField) {
+       //Create a toolbar
+       let bar = UIToolbar()
+       
+       //Create a done button with an action to trigger our function to dismiss the keyboard
+       let doneBtn = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissMyKeyboard))
+       
+       //Create a felxible space item so that we can add it around in toolbar to position our done button
+       let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+       
+       bar.items = [flexSpace, flexSpace, doneBtn]
+       bar.sizeToFit()
+       
+       textField.inputAccessoryView = bar
+   }
+    
+    @objc func dismissMyKeyboard(){
+        view.endEditing(true)
+        print("Dismissed")
+    }
 }

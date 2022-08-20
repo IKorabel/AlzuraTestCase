@@ -15,5 +15,10 @@ class AlertManager {
         errorAlertController.addAction(errorAlertDismissAction)
         vc.present(errorAlertController, animated: true)
     }
-
+    
+    static func createMenuAlert(vc: UIViewController, title: String, actions: [UIAlertAction], completion: (() -> Void)?) {
+        let menuAlert = UIAlertController(title: title, message: "Please select a sorting method", preferredStyle: .actionSheet)
+        actions.forEach({ menuAlert.addAction($0)})
+        vc.present(menuAlert, animated: true, completion: completion)
+    }
 }

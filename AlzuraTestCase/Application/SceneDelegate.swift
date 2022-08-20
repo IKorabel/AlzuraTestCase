@@ -11,8 +11,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-    static let ordersNavigationController = AppStyleNavigationController(rootViewController: OrdersListVC(nibName: nil, bundle: nil))
-    static let authNavigationController = AppStyleNavigationController(rootViewController: AuthenticationVC(nibName: nil, bundle: nil))
+    let ordersNavigationController = AppStyleNavigationController(rootViewController: OrdersListVC(nibName: nil, bundle: nil))
+    let authNavigationController = AppStyleNavigationController(rootViewController: AuthenticationVC(nibName: nil, bundle: nil))
 
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func rootViewControllerSettings() {
-        self.window?.rootViewController = AppSettings.shared.isUserSignedIn ? SceneDelegate.ordersNavigationController : SceneDelegate.authNavigationController
+        self.window?.rootViewController = AppSettings.shared.isUserSignedIn ? ordersNavigationController : authNavigationController
         self.window?.makeKeyAndVisible()
     }
     

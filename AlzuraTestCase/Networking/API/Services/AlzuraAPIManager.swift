@@ -8,14 +8,12 @@
 import Foundation
 
 class AlzuraAPIManager {
-    var completionHandler: ((Date) -> Void)?
     
+    private let apiHeader = ["Accept": "application/vnd.saitowag.api+json;version=1.0",
+                             "X-AUTH-TOKEN": AppSettings.shared.userAccessToken]
     
-    func fetchOrders() {
+    func fetchOrders(completion: @escaping (APIResponseCompletionHandler) -> Void) {
         guard let apiUrl = URL(string: "https://api-b2b.alzura.com/operator/orders") else { return }
-        
-        let apiHeader = ["Accept": "application/vnd.saitowag.api+json;version=1.0",
-                         "X-AUTH-TOKEN": AppSettings.shared.userAccessToken]
         
         var request = URLRequest(url: apiUrl)
         request.allHTTPHeaderFields = apiHeader
@@ -29,24 +27,20 @@ class AlzuraAPIManager {
             
             guard let httpResponse = response as? HTTPURLResponse,
                        (200...299).contains(httpResponse.statusCode) else {
-                   print("Error with the response, unexpected status code: \(response)")
+                   completion(.failure(errorDescription: "Error with the response, unexpected status code: \(response)"))
                    return
             }
             
             guard let data = data else {
-                print("No data")
+                completion(.failure(errorDescription: "Data wasn't found"))
                 return
             }
-            
-            print("FetchedOrders: \(data)")
             do {
                 let fetchedOrders = try JSONDecoder().decode(OrdersResponse.self, from: data)
-                print("FetchedOrders: \(fetchedOrders)")
+                completion(.success(data: fetchedOrders.data))
             } catch let decodingError {
-                print("OrdersDecodingError: \(decodingError)")
+                completion(.failure(errorDescription: "OrdersDecodingError: \(decodingError)"))
             }
-            
-            print("success. Data: \(data)")
         }
         task.resume()
     }
@@ -87,3 +81,13 @@ class AlzuraAPIManager {
         task.resume()
     }
 }
+
+enum APIResponseCompletionHandler {
+    case success(data: [AlzuraAPIResponse])
+    case failure(errorDescription: String)
+}
+
+protocol AlzuraAPIResponse: Codable {
+    
+}
+

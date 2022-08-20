@@ -8,7 +8,7 @@
 import Foundation
 import Locksmith
 
-struct User: Codable {
+struct User: AlzuraAPIResponse {
     var email: String
     var password: String
     

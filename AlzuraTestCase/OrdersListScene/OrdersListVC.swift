@@ -19,22 +19,75 @@ class OrdersListVC: UIViewController {
         return tableView
     }()
     
+    private lazy var loadingSpinner: UIActivityIndicatorView = {
+        let loadingSpinner = UIActivityIndicatorView(style: .medium)
+        loadingSpinner.startAnimating()
+        loadingSpinner.hidesWhenStopped = true
+        return loadingSpinner
+    }()
+    
     private lazy var signOutBarButtonItem: UIBarButtonItem = {
         let signOutButton = UIBarButtonItem(title: "Sign out", style: .done, target: self, action: #selector(didClickedOnSignOutButton(_:)))
         return signOutButton
     }()
     
+    private lazy var sortBarButtonItem: UIBarButtonItem = {
+        let sortButton = UIBarButtonItem(image: UIImage(systemName: "arrow.up.arrow.down")!, style: .done, target: self, action: #selector(didClickedOnSortButton(_:)))
+        return sortButton
+    }()
+    
+
+    let ordersSearchController = UISearchController()
+    
+    var orders = [Order]()
+    var filteredOrders = [Order]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-         presentOrdersList()
-         addButtonsToNavigationBar()
-        title = "Orders List"
+        commonInit()
+        fetchOrders()
         // Do any additional setup after loading the view.
+    }
+    
+    private func commonInit() {
+       implementSearchController()
+       presentOrdersList()
+       addButtonsToNavigationBar()
+       title = "Orders List"
+    }
+    
+    private func implementSearchController() {
+        self.filteredOrders = orders
+        ordersSearchController.searchBar.delegate = self
+        ordersSearchController.searchBar.placeholder = "Search by ID"
+        navigationItem.searchController = ordersSearchController
+    }
+    
+    func fetchOrders() {
+        ordersListTableView.backgroundView = loadingSpinner
+        AlzuraAPIManager().fetchOrders { [self] responseResult in
+            DispatchQueue.main.sync {
+                loadingSpinner.stopAnimating()
+            }
+            switch responseResult {
+            case .success(let data):
+                guard let orders = data as? [Order] else { return }
+                self.orders = orders.sortOrders(comparisonResult: .orderedDescending)
+                self.filteredOrders = orders.sortOrders(comparisonResult: .orderedDescending)
+                DispatchQueue.main.async { [self] in
+                    ordersListTableView.reloadData()
+                }
+            case .failure(let errorDescription):
+                AlertManager.createErrorAlert(vc: self, errorTheme: "Coudn't load the orders", errorDescription: errorDescription)
+            }
+        }
     }
     
     private func addButtonsToNavigationBar() {
         navigationItem.leftBarButtonItems = [signOutBarButtonItem]
+        navigationItem.rightBarButtonItems = [sortBarButtonItem]
     }
+    
     
     private func presentOrdersList() {
         view.addSubview(ordersListTableView)
@@ -45,6 +98,7 @@ class OrdersListVC: UIViewController {
             ordersListTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
+    
 
     /*
     // MARK: - Navigation
@@ -66,16 +120,32 @@ extension OrdersListVC {
             SegueHelper.toLoginPage.makeSegue(fromVC: self)
         }
     }
+    
+    @objc private func didClickedOnSortButton(_ sender: UIBarButtonItem) {
+        let sortInDescendingOrderButton = UIAlertAction(title: "By descending order", style: .default) { [self] _ in
+            print("descending order")
+          //  ordersSearchController.searchBar.isHidden = true
+            filteredOrders = orders.sortOrders(comparisonResult: .orderedDescending)
+            ordersListTableView.reloadData()
+        }
+        
+        let sortInAscendingOrderButton = UIAlertAction(title: "By ascending order", style: .default) { [self] _ in
+            print("acending order")
+          //  ordersSearchController.searchBar.isHidden = true
+            filteredOrders = orders.sortOrders(comparisonResult: .orderedAscending)
+            ordersListTableView.reloadData()
+        }
+        
+        let exitButton = UIAlertAction(title: "Cancel", style: .destructive)
+        
+        AlertManager.createMenuAlert(vc: self, title: "How do you want to sort?", actions: [sortInDescendingOrderButton, sortInAscendingOrderButton, exitButton]) { [self] in }
+    }
 }
 
 extension OrdersListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return filteredOrders.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -83,6 +153,8 @@ extension OrdersListVC: UITableViewDelegate, UITableViewDataSource {
             print("not active")
             return UITableViewCell()
         }
+        let order = filteredOrders[indexPath.row]
+        orderCell.setOrder(order: order)
         return orderCell
     }
     
@@ -90,9 +162,32 @@ extension OrdersListVC: UITableViewDelegate, UITableViewDataSource {
         return 165
     }
     
-
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "ALALAl"
+        return OrdersListSettings.shared.sortingOrder.text
     }
     
+}
+
+extension OrdersListVC: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredOrders = []
+        
+        if searchText.isEmpty {
+            filteredOrders = orders
+        }
+        
+        orders.forEach { filteredOrder in
+            let orderID = "\(filteredOrder.id)"
+            if orderID.uppercased().contains(searchText.uppercased()) {
+                filteredOrders.append(filteredOrder)
+            }
+        }
+        ordersListTableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        filteredOrders = orders
+        ordersListTableView.reloadData()
+    }
 }
