@@ -15,7 +15,7 @@ class AuthenticationManager {
     let keychainManager = KeychainManager()
     
     func signIn(user: User, completion: @escaping (AuthCompletionHandler) -> Void) {
-        guard let foundedUser = keychainManager.getData(userAccountName: user.username) else {
+        guard let foundedUser = keychainManager.getData(userAccountName: user.email) else {
         completion(.failure(errorDescription: "No such user exists. Please check your Email"))
         return
         }
@@ -35,7 +35,7 @@ class AuthenticationManager {
             completion(.failure(errorDescription: "Invalid dictionary"))
             return
         }
-        keychainManager.saveData(dataToSave: dictionary, userAccountName: user.username) { signUpStatus in
+        keychainManager.saveData(dataToSave: dictionary, userAccountName: user.email) { signUpStatus in
             switch signUpStatus {
             case .success(let user):
                 AppSettings.shared.isUserSignedIn = true

@@ -11,19 +11,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    static let ordersNavigationController = AppStyleNavigationController(rootViewController: OrdersListVC(nibName: nil, bundle: nil))
+    static let authNavigationController = AppStyleNavigationController(rootViewController: AuthenticationVC(nibName: nil, bundle: nil))
 
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
-       rootViewControllerSettings()
+        rootViewControllerSettings()
     }
     
     func rootViewControllerSettings() {
-        let ordersNavigationController = createNavigationController(viewControllers: [OrdersListVC(nibName: nil, bundle: nil)])
-        let authNavigationController = createNavigationController(viewControllers: [AuthenticationVC(nibName: nil, bundle: nil)])
-        self.window?.rootViewController = AppSettings.shared.isUserSignedIn ? ordersNavigationController : authNavigationController
+        self.window?.rootViewController = AppSettings.shared.isUserSignedIn ? SceneDelegate.ordersNavigationController : SceneDelegate.authNavigationController
         self.window?.makeKeyAndVisible()
     }
     

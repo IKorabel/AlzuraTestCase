@@ -19,11 +19,21 @@ class OrdersListVC: UIViewController {
         return tableView
     }()
     
+    private lazy var signOutBarButtonItem: UIBarButtonItem = {
+        let signOutButton = UIBarButtonItem(title: "Sign out", style: .done, target: self, action: #selector(didClickedOnSignOutButton(_:)))
+        return signOutButton
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
          presentOrdersList()
+         addButtonsToNavigationBar()
         title = "Orders List"
         // Do any additional setup after loading the view.
+    }
+    
+    private func addButtonsToNavigationBar() {
+        navigationItem.leftBarButtonItems = [signOutBarButtonItem]
     }
     
     private func presentOrdersList() {
@@ -46,6 +56,16 @@ class OrdersListVC: UIViewController {
     }
     */
 
+}
+
+//MARK: Actions
+extension OrdersListVC {
+    
+    @objc private func didClickedOnSignOutButton(_ sender: UIBarButtonItem) {
+        AuthenticationManager().signOut {
+            SegueHelper.toLoginPage.makeSegue(fromVC: self)
+        }
+    }
 }
 
 extension OrdersListVC: UITableViewDelegate, UITableViewDataSource {

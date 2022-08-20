@@ -14,7 +14,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        makeAuthRequest()
+        AlzuraAPIManager().fetchOrders()
         return true
+    }
+    
+    func makeAuthRequest() {
+        if AppSettings.shared.userAccessToken.isEmpty {
+            AlzuraAPIManager().makeAuthRequest(user: User(email: "106901", password: "Mobile2022!Dev"))
+        } else {
+            print("authToken: \(AppSettings.shared.userAccessToken)")
+        }
     }
 
     // MARK: UISceneSession Lifecycle

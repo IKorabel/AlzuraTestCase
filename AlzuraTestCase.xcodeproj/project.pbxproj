@@ -12,7 +12,10 @@
 		A230B4DC28B01B9200E6ABFD /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230B4DB28B01B9200E6ABFD /* ValidationManager.swift */; };
 		A230B4E028B0532600E6ABFD /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230B4DF28B0532600E6ABFD /* EncodableExtension.swift */; };
 		A230B4E328B062F300E6ABFD /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230B4E228B062F300E6ABFD /* AlertManager.swift */; };
-		A230B4E628B06B3A00E6ABFD /* OrdersNaviigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230B4E528B06B3A00E6ABFD /* OrdersNaviigationController.swift */; };
+		A230B4E628B06B3A00E6ABFD /* AppStyleNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230B4E528B06B3A00E6ABFD /* AppStyleNavigationController.swift */; };
+		A2996CFF28B13C53004DFBB6 /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2996CFE28B13C52004DFBB6 /* SignInResponse.swift */; };
+		A2996D0128B14DFB004DFBB6 /* OrdersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2996D0028B14DFB004DFBB6 /* OrdersResponse.swift */; };
+		A2996D0328B15556004DFBB6 /* SegueHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2996D0228B15556004DFBB6 /* SegueHelper.swift */; };
 		A2A38A8E28AEBCB000E38958 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A38A8C28AEBCB000E38958 /* OrderTableViewCell.swift */; };
 		A2A38A8F28AEBCB000E38958 /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A38A8D28AEBCB000E38958 /* OrderTableViewCell.xib */; };
 		A2A38A9328AF067400E38958 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A38A9228AF067400E38958 /* AuthenticationManager.swift */; };
@@ -39,7 +42,10 @@
 		A230B4DB28B01B9200E6ABFD /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
 		A230B4DF28B0532600E6ABFD /* EncodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableExtension.swift; sourceTree = "<group>"; };
 		A230B4E228B062F300E6ABFD /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
-		A230B4E528B06B3A00E6ABFD /* OrdersNaviigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersNaviigationController.swift; sourceTree = "<group>"; };
+		A230B4E528B06B3A00E6ABFD /* AppStyleNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyleNavigationController.swift; sourceTree = "<group>"; };
+		A2996CFE28B13C52004DFBB6 /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
+		A2996D0028B14DFB004DFBB6 /* OrdersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersResponse.swift; sourceTree = "<group>"; };
+		A2996D0228B15556004DFBB6 /* SegueHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueHelper.swift; sourceTree = "<group>"; };
 		A2A38A8C28AEBCB000E38958 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		A2A38A8D28AEBCB000E38958 /* OrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableViewCell.xib; sourceTree = "<group>"; };
 		A2A38A9228AF067400E38958 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				A230B4E228B062F300E6ABFD /* AlertManager.swift */,
+				A2996D0228B15556004DFBB6 /* SegueHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -119,7 +126,7 @@
 		A230B4E428B06AED00E6ABFD /* NavigationControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A230B4E528B06B3A00E6ABFD /* OrdersNaviigationController.swift */,
+				A230B4E528B06B3A00E6ABFD /* AppStyleNavigationController.swift */,
 			);
 			path = NavigationControllers;
 			sourceTree = "<group>";
@@ -237,6 +244,8 @@
 		A2BC682F28AD415D003EFC28 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A2996CFE28B13C52004DFBB6 /* SignInResponse.swift */,
+				A2996D0028B14DFB004DFBB6 /* OrdersResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -401,20 +410,23 @@
 			files = (
 				A230B4DC28B01B9200E6ABFD /* ValidationManager.swift in Sources */,
 				A230B4E328B062F300E6ABFD /* AlertManager.swift in Sources */,
+				A2996CFF28B13C53004DFBB6 /* SignInResponse.swift in Sources */,
 				A22DD4CC28AFC043004F2E7A /* KeychainManager.swift in Sources */,
 				A2BC683228AD516B003EFC28 /* AlzuraAPIManager.swift in Sources */,
 				A22DD4CE28AFC56E004F2E7A /* UiButton+UIView+UIImageExtensions.swift in Sources */,
 				A2BC681928AD3F29003EFC28 /* AuthenticationVC.swift in Sources */,
-				A230B4E628B06B3A00E6ABFD /* OrdersNaviigationController.swift in Sources */,
+				A230B4E628B06B3A00E6ABFD /* AppStyleNavigationController.swift in Sources */,
 				A2BC681528AD3F29003EFC28 /* AppDelegate.swift in Sources */,
 				A2A38A9328AF067400E38958 /* AuthenticationManager.swift in Sources */,
 				A2BC681F28AD3F29003EFC28 /* AlzuraTestCase.xcdatamodeld in Sources */,
 				A2BC683828AD5558003EFC28 /* OrdersListVC.swift in Sources */,
+				A2996D0328B15556004DFBB6 /* SegueHelper.swift in Sources */,
 				A2BC683528AD544D003EFC28 /* Alzura+UIColors.swift in Sources */,
 				A2A38A9628AF118700E38958 /* AppSettings.swift in Sources */,
 				A2A38A9928AF11CD00E38958 /* User.swift in Sources */,
 				A2A38A8E28AEBCB000E38958 /* OrderTableViewCell.swift in Sources */,
 				A230B4E028B0532600E6ABFD /* EncodableExtension.swift in Sources */,
+				A2996D0128B14DFB004DFBB6 /* OrdersResponse.swift in Sources */,
 				A2BC681728AD3F29003EFC28 /* SceneDelegate.swift in Sources */,
 				A2BC683C28AD5928003EFC28 /* ASStyleHeaderView.swift in Sources */,
 			);

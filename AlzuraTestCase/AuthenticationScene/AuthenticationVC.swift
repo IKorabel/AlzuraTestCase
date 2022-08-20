@@ -83,6 +83,8 @@ class AuthenticationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
+        title = "Welcome to Alzura"
         // Do any additional setup after loading the view.
     }
     
@@ -107,11 +109,11 @@ class AuthenticationVC: UIViewController {
     //MARK: Actions
     
     @objc private func didClickedOnSignUpButton(_ sender: UIButton) {
-        authManager.signUp(user: .init(username: loginTextField.text!,
+        authManager.signUp(user: .init(email: loginTextField.text!,
                                        password: passwordTextField.text!)) { authResult in
             switch authResult {
-            case .success(let user):
-                print("NewUser: \(user)")
+            case .success(_):
+                SegueHelper.toOrders.makeSegue(fromVC: self)
             case .failure(let errorDescription):
                 AlertManager.createErrorAlert(vc: self, errorTheme: "Sign up error", errorDescription: errorDescription)
             }
@@ -119,10 +121,10 @@ class AuthenticationVC: UIViewController {
     }
     
     @objc private func didClickedOnSignInButton(_ sender: UIButton) {
-        authManager.signIn(user: .init(username: loginTextField.text!, password: passwordTextField.text!)) { signInResult in
+        authManager.signIn(user: .init(email: loginTextField.text!, password: passwordTextField.text!)) { signInResult in
             switch signInResult {
-            case .success(let user):
-                print("welcome, friend")
+            case .success(_):
+                SegueHelper.toOrders.makeSegue(fromVC: self)
             case .failure(let errorDescription):
                 AlertManager.createErrorAlert(vc: self, errorTheme: "Sign in error", errorDescription: errorDescription)
             }
@@ -143,6 +145,17 @@ extension AuthenticationVC: UITextFieldDelegate {
         default:
             break
         }
+//        if loginTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
+//            signInButton.isEnabled = false
+//            signUpButton.isEnabled = false
+//            signUpButton.setBackgroundColor(.systemGreen.withAlphaComponent(0.1), forState: .normal)
+//            signInButton.setBackgroundColor(.systemBlue.withAlphaComponent(0.1), forState: .normal)
+//        } else {
+//            signInButton.isEnabled = true
+//            signUpButton.isEnabled = true
+//            signUpButton.setBackgroundColor(.systemGreen.withAlphaComponent(1), forState: .normal)
+//            signInButton.setBackgroundColor(.systemBlue.withAlphaComponent(1), forState: .normal)
+//        }
     }
     
 }

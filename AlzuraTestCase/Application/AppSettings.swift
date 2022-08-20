@@ -20,4 +20,13 @@ class AppSettings {
             defaults.set(newValue, forKey: "isUserSignedIn")
         }
     }
+    
+    var userAccessToken: String {
+        get {
+            guard let userAccessToken = UserDefaults.standard.string(forKey: "userAccessToken") else { return ""}
+            return userAccessToken
+        } set {
+            UserDefaults.standard.set(newValue, forKey: "userAccessToken")
+        }
+    }
 }

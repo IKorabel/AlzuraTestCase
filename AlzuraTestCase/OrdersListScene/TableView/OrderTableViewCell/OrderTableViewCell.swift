@@ -24,10 +24,26 @@ class OrderTableViewCell: UITableViewCell {
         setShape()
     }
     
+    func setOrder(order: Order) {
+        orderDateLabel.text = order.updatedAt
+        priceLabel.text = "\(order.sumOriginalPrice) \(order.currency.getCurrencySymbol() ?? "")"
+        orderIdLabel.text = "\(order.id)"
+    }
+    
     private func setShape() {
         cellContentView.clipsToBounds = true
         cellContentView.layer.cornerRadius = 10
         cellContentView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+    }
+    
+    private func getCurrencySymbol(from currencyCode: String) -> String? {
+        
+        let locale = NSLocale(localeIdentifier: currencyCode)
+        if locale.displayName(forKey: .currencySymbol, value: currencyCode) == currencyCode {
+            let newlocale = NSLocale(localeIdentifier: currencyCode.dropLast() + "_en")
+            return newlocale.displayName(forKey: .currencySymbol, value: currencyCode)
+        }
+        return locale.displayName(forKey: .currencySymbol, value: currencyCode)
     }
     
 
