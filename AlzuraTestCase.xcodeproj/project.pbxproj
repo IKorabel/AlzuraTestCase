@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A22DD4CC28AFC043004F2E7A /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22DD4CB28AFC043004F2E7A /* KeychainManager.swift */; };
+		A22DD4CE28AFC56E004F2E7A /* UiButton+UIView+UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22DD4CD28AFC56E004F2E7A /* UiButton+UIView+UIImageExtensions.swift */; };
+		A230B4DC28B01B9200E6ABFD /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230B4DB28B01B9200E6ABFD /* ValidationManager.swift */; };
+		A230B4E028B0532600E6ABFD /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230B4DF28B0532600E6ABFD /* EncodableExtension.swift */; };
+		A230B4E328B062F300E6ABFD /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230B4E228B062F300E6ABFD /* AlertManager.swift */; };
+		A230B4E628B06B3A00E6ABFD /* OrdersNaviigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230B4E528B06B3A00E6ABFD /* OrdersNaviigationController.swift */; };
 		A2A38A8E28AEBCB000E38958 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A38A8C28AEBCB000E38958 /* OrderTableViewCell.swift */; };
 		A2A38A8F28AEBCB000E38958 /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A38A8D28AEBCB000E38958 /* OrderTableViewCell.xib */; };
 		A2A38A9328AF067400E38958 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A38A9228AF067400E38958 /* AuthenticationManager.swift */; };
+		A2A38A9628AF118700E38958 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A38A9528AF118700E38958 /* AppSettings.swift */; };
+		A2A38A9928AF11CD00E38958 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A38A9828AF11CD00E38958 /* User.swift */; };
 		A2BC681528AD3F29003EFC28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BC681428AD3F29003EFC28 /* AppDelegate.swift */; };
 		A2BC681728AD3F29003EFC28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BC681628AD3F29003EFC28 /* SceneDelegate.swift */; };
 		A2BC681928AD3F29003EFC28 /* AuthenticationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BC681828AD3F29003EFC28 /* AuthenticationVC.swift */; };
@@ -21,12 +29,22 @@
 		A2BC683528AD544D003EFC28 /* Alzura+UIColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BC683428AD544D003EFC28 /* Alzura+UIColors.swift */; };
 		A2BC683828AD5558003EFC28 /* OrdersListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BC683728AD5558003EFC28 /* OrdersListVC.swift */; };
 		A2BC683C28AD5928003EFC28 /* ASStyleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BC683B28AD5928003EFC28 /* ASStyleHeaderView.swift */; };
+		C7B43A4163187AFE722318E4 /* Pods_AlzuraTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1926B29887FC4A2FF3BEB57 /* Pods_AlzuraTestCase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5504D7FBA783B15FB71FA959 /* Pods-AlzuraTestCase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlzuraTestCase.debug.xcconfig"; path = "Target Support Files/Pods-AlzuraTestCase/Pods-AlzuraTestCase.debug.xcconfig"; sourceTree = "<group>"; };
+		A22DD4CB28AFC043004F2E7A /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		A22DD4CD28AFC56E004F2E7A /* UiButton+UIView+UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiButton+UIView+UIImageExtensions.swift"; sourceTree = "<group>"; };
+		A230B4DB28B01B9200E6ABFD /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
+		A230B4DF28B0532600E6ABFD /* EncodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableExtension.swift; sourceTree = "<group>"; };
+		A230B4E228B062F300E6ABFD /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		A230B4E528B06B3A00E6ABFD /* OrdersNaviigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersNaviigationController.swift; sourceTree = "<group>"; };
 		A2A38A8C28AEBCB000E38958 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		A2A38A8D28AEBCB000E38958 /* OrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableViewCell.xib; sourceTree = "<group>"; };
 		A2A38A9228AF067400E38958 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		A2A38A9528AF118700E38958 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		A2A38A9828AF11CD00E38958 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A2BC681128AD3F29003EFC28 /* AlzuraTestCase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlzuraTestCase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2BC681428AD3F29003EFC28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2BC681628AD3F29003EFC28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +58,8 @@
 		A2BC683428AD544D003EFC28 /* Alzura+UIColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alzura+UIColors.swift"; sourceTree = "<group>"; };
 		A2BC683728AD5558003EFC28 /* OrdersListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersListVC.swift; sourceTree = "<group>"; };
 		A2BC683B28AD5928003EFC28 /* ASStyleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASStyleHeaderView.swift; sourceTree = "<group>"; };
+		B79E7FA839D66BDD99D3BA6A /* Pods-AlzuraTestCase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlzuraTestCase.release.xcconfig"; path = "Target Support Files/Pods-AlzuraTestCase/Pods-AlzuraTestCase.release.xcconfig"; sourceTree = "<group>"; };
+		D1926B29887FC4A2FF3BEB57 /* Pods_AlzuraTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlzuraTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,12 +67,63 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7B43A4163187AFE722318E4 /* Pods_AlzuraTestCase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4306215033A239E70647C6C0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D1926B29887FC4A2FF3BEB57 /* Pods_AlzuraTestCase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C0E97C76702FB1DDD01D8FB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5504D7FBA783B15FB71FA959 /* Pods-AlzuraTestCase.debug.xcconfig */,
+				B79E7FA839D66BDD99D3BA6A /* Pods-AlzuraTestCase.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A230B4DD28B052FF00E6ABFD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A230B4DE28B0531200E6ABFD /* NetworkingExtensions */,
+				A2BC682C28AD4000003EFC28 /* API */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		A230B4DE28B0531200E6ABFD /* NetworkingExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				A230B4DF28B0532600E6ABFD /* EncodableExtension.swift */,
+			);
+			path = NetworkingExtensions;
+			sourceTree = "<group>";
+		};
+		A230B4E128B062DF00E6ABFD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A230B4E228B062F300E6ABFD /* AlertManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A230B4E428B06AED00E6ABFD /* NavigationControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A230B4E528B06B3A00E6ABFD /* OrdersNaviigationController.swift */,
+			);
+			path = NavigationControllers;
+			sourceTree = "<group>";
+		};
 		A2A38A9028AEBCBC00E38958 /* OrderTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -65,8 +136,10 @@
 		A2A38A9128AF065200E38958 /* AuthenticationServices */ = {
 			isa = PBXGroup;
 			children = (
+				A2A38A9728AF11BC00E38958 /* Models */,
 				A2A38A9428AF102700E38958 /* KeychainServices */,
 				A2A38A9228AF067400E38958 /* AuthenticationManager.swift */,
+				A230B4DB28B01B9200E6ABFD /* ValidationManager.swift */,
 			);
 			path = AuthenticationServices;
 			sourceTree = "<group>";
@@ -74,8 +147,17 @@
 		A2A38A9428AF102700E38958 /* KeychainServices */ = {
 			isa = PBXGroup;
 			children = (
+				A22DD4CB28AFC043004F2E7A /* KeychainManager.swift */,
 			);
 			path = KeychainServices;
+			sourceTree = "<group>";
+		};
+		A2A38A9728AF11BC00E38958 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A2A38A9828AF11CD00E38958 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A2BC680828AD3F28003EFC28 = {
@@ -83,6 +165,8 @@
 			children = (
 				A2BC681328AD3F29003EFC28 /* AlzuraTestCase */,
 				A2BC681228AD3F29003EFC28 /* Products */,
+				5C0E97C76702FB1DDD01D8FB /* Pods */,
+				4306215033A239E70647C6C0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,13 +181,13 @@
 		A2BC681328AD3F29003EFC28 /* AlzuraTestCase */ = {
 			isa = PBXGroup;
 			children = (
+				A230B4E428B06AED00E6ABFD /* NavigationControllers */,
+				A230B4DD28B052FF00E6ABFD /* Networking */,
 				A2A38A9128AF065200E38958 /* AuthenticationServices */,
 				A2BC683628AD553C003EFC28 /* OrdersListScene */,
 				A2BC682E28AD4082003EFC28 /* Application */,
 				A2BC682D28AD4009003EFC28 /* Resources */,
-				A2BC682C28AD4000003EFC28 /* API */,
 				A2BC682B28AD3FEE003EFC28 /* AuthenticationScene */,
-				A2BC681828AD3F29003EFC28 /* AuthenticationVC.swift */,
 				A2BC681A28AD3F29003EFC28 /* Main.storyboard */,
 				A2BC681D28AD3F29003EFC28 /* AlzuraTestCase.xcdatamodeld */,
 			);
@@ -113,6 +197,7 @@
 		A2BC682B28AD3FEE003EFC28 /* AuthenticationScene */ = {
 			isa = PBXGroup;
 			children = (
+				A2BC681828AD3F29003EFC28 /* AuthenticationVC.swift */,
 			);
 			path = AuthenticationScene;
 			sourceTree = "<group>";
@@ -129,6 +214,7 @@
 		A2BC682D28AD4009003EFC28 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A230B4E128B062DF00E6ABFD /* Helpers */,
 				A2BC683A28AD58F5003EFC28 /* CustomViews */,
 				A2BC683328AD5439003EFC28 /* Extensions */,
 				A2BC682028AD3F2D003EFC28 /* Assets.xcassets */,
@@ -143,6 +229,7 @@
 			children = (
 				A2BC681428AD3F29003EFC28 /* AppDelegate.swift */,
 				A2BC681628AD3F29003EFC28 /* SceneDelegate.swift */,
+				A2A38A9528AF118700E38958 /* AppSettings.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -166,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				A2BC683428AD544D003EFC28 /* Alzura+UIColors.swift */,
+				A22DD4CD28AFC56E004F2E7A /* UiButton+UIView+UIImageExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -202,9 +290,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2BC682828AD3F2D003EFC28 /* Build configuration list for PBXNativeTarget "AlzuraTestCase" */;
 			buildPhases = (
+				0FC2453AC15532969C80E2FB /* [CP] Check Pods Manifest.lock */,
 				A2BC680D28AD3F28003EFC28 /* Sources */,
 				A2BC680E28AD3F28003EFC28 /* Frameworks */,
 				A2BC680F28AD3F28003EFC28 /* Resources */,
+				E44875D30365915BA4DA0EDA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,19 +352,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0FC2453AC15532969C80E2FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlzuraTestCase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E44875D30365915BA4DA0EDA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlzuraTestCase/Pods-AlzuraTestCase-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlzuraTestCase/Pods-AlzuraTestCase-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AlzuraTestCase/Pods-AlzuraTestCase-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A2BC680D28AD3F28003EFC28 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A230B4DC28B01B9200E6ABFD /* ValidationManager.swift in Sources */,
+				A230B4E328B062F300E6ABFD /* AlertManager.swift in Sources */,
+				A22DD4CC28AFC043004F2E7A /* KeychainManager.swift in Sources */,
 				A2BC683228AD516B003EFC28 /* AlzuraAPIManager.swift in Sources */,
+				A22DD4CE28AFC56E004F2E7A /* UiButton+UIView+UIImageExtensions.swift in Sources */,
 				A2BC681928AD3F29003EFC28 /* AuthenticationVC.swift in Sources */,
+				A230B4E628B06B3A00E6ABFD /* OrdersNaviigationController.swift in Sources */,
 				A2BC681528AD3F29003EFC28 /* AppDelegate.swift in Sources */,
 				A2A38A9328AF067400E38958 /* AuthenticationManager.swift in Sources */,
 				A2BC681F28AD3F29003EFC28 /* AlzuraTestCase.xcdatamodeld in Sources */,
 				A2BC683828AD5558003EFC28 /* OrdersListVC.swift in Sources */,
 				A2BC683528AD544D003EFC28 /* Alzura+UIColors.swift in Sources */,
+				A2A38A9628AF118700E38958 /* AppSettings.swift in Sources */,
+				A2A38A9928AF11CD00E38958 /* User.swift in Sources */,
 				A2A38A8E28AEBCB000E38958 /* OrderTableViewCell.swift in Sources */,
+				A230B4E028B0532600E6ABFD /* EncodableExtension.swift in Sources */,
 				A2BC681728AD3F29003EFC28 /* SceneDelegate.swift in Sources */,
 				A2BC683C28AD5928003EFC28 /* ASStyleHeaderView.swift in Sources */,
 			);
@@ -418,6 +558,7 @@
 		};
 		A2BC682928AD3F2D003EFC28 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5504D7FBA783B15FB71FA959 /* Pods-AlzuraTestCase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -447,6 +588,7 @@
 		};
 		A2BC682A28AD3F2D003EFC28 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B79E7FA839D66BDD99D3BA6A /* Pods-AlzuraTestCase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

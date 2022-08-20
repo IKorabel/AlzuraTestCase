@@ -17,17 +17,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
-        makeOrdersListVCEmbedInNavigationController()
+       rootViewControllerSettings()
     }
     
-    func makeOrdersListVCEmbedInNavigationController() {
-        print("is active")
-        let navController = UINavigationController()
-        let embedViewController = OrdersListVC(nibName: nil, bundle: nil)
-        navController.viewControllers = [embedViewController]
-        navController.navigationBar.prefersLargeTitles = true
-        self.window?.rootViewController = navController
+    func rootViewControllerSettings() {
+        let ordersNavigationController = createNavigationController(viewControllers: [OrdersListVC(nibName: nil, bundle: nil)])
+        let authNavigationController = createNavigationController(viewControllers: [AuthenticationVC(nibName: nil, bundle: nil)])
+        self.window?.rootViewController = AppSettings.shared.isUserSignedIn ? ordersNavigationController : authNavigationController
         self.window?.makeKeyAndVisible()
+    }
+    
+    func createNavigationController(viewControllers: [UIViewController]) -> UINavigationController {
+        let navigationController = UINavigationController()
+        navigationController.viewControllers = viewControllers
+        navigationController.navigationBar.prefersLargeTitles = true
+        return navigationController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
