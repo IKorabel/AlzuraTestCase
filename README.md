@@ -15,6 +15,7 @@ My task was to develop a mobile app. with authentication and a list of orders wi
 ## How long did it take?
 Approximately 1,5 days
 
+
 # Progress of development
 
    ## 1.  Login Screen
