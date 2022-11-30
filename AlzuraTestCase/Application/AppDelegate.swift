@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func makeAuthRequest() {
         if AppSettings.shared.userAccessToken.isEmpty {
-            AlzuraAPIManager().makeAuthRequest(user: User(email: "106901", password: "Mobile2022!Dev"))
+            let user = User(email: "106901", password: "Mobile2022!Dev")
+           // AlzuraAPIManager().makeAuthRequest(user: user, completionHandler: <#(APIResponseCompletionHandler) -> Void#>)
         } else {
             print("authToken: \(AppSettings.shared.userAccessToken)")
         }

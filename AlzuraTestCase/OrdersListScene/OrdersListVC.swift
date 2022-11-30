@@ -71,14 +71,16 @@ class OrdersListVC: UIViewController {
             }
             switch responseResult {
             case .success(let data):
+                print("ObtainedData: \(data)")
                 guard let orders = data as? [Order] else { return }
                 self.orders = orders.sortOrders(comparisonResult: .orderedDescending)
                 self.filteredOrders = orders.sortOrders(comparisonResult: .orderedDescending)
                 DispatchQueue.main.async { [self] in
                     ordersListTableView.reloadData()
                 }
-            case .failure(let errorDescription):
-                AlertManager.createErrorAlert(vc: self, errorTheme: "Coudn't load the orders", errorDescription: errorDescription)
+            case .failure(let error):
+                AlertManager.createErrorAlert(vc: self, errorTheme: "Couldn't load the orders",
+                                              errorDescription: error.errorDescription)
             }
         }
     }

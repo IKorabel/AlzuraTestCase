@@ -1,0 +1,6 @@
+framework module Pods_AlzuraTestCase {
+  umbrella header "Pods-AlzuraTestCase-umbrella.h"
+
+  export *
+  module * { export * }
+}

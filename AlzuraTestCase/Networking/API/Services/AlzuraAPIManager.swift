@@ -6,85 +6,51 @@
 //
 
 import Foundation
+import Alamofire
 
 class AlzuraAPIManager {
     
-    private let apiHeader = ["Accept": "application/vnd.saitowag.api+json;version=1.0",
-                             "X-AUTH-TOKEN": AppSettings.shared.userAccessToken]
-    
-    func fetchOrders(completion: @escaping (APIResponseCompletionHandler) -> Void) {
-        guard let apiUrl = URL(string: "https://api-b2b.alzura.com/operator/orders") else { return }
-        
-        var request = URLRequest(url: apiUrl)
-        request.allHTTPHeaderFields = apiHeader
-        request.httpMethod = "GET"
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-            }
-            
-            guard let httpResponse = response as? HTTPURLResponse,
-                       (200...299).contains(httpResponse.statusCode) else {
-                   completion(.failure(errorDescription: "Error with the response, unexpected status code: \(response)"))
-                   return
-            }
-            
-            guard let data = data else {
-                completion(.failure(errorDescription: "Data wasn't found"))
-                return
-            }
-            do {
-                let fetchedOrders = try JSONDecoder().decode(OrdersResponse.self, from: data)
-                completion(.success(data: fetchedOrders.data))
-            } catch let decodingError {
-                completion(.failure(errorDescription: "OrdersDecodingError: \(decodingError)"))
-            }
+    func fetchOrders(completion: @escaping (APIRequestCompletionHandler) -> Void) {
+        makeApiRequest(request: .getOrders) { getOrdersResponse in
+            print("\(AppSettings.shared.userAccessToken)")
+            completion(getOrdersResponse)
         }
-        task.resume()
     }
     
-    func makeAuthRequest(user: User) {
-        guard let authRequestUrl = URL(string: "https://api-b2b.alzura.com/operator/login") else { return }
-       // let apiHeader = ["Accept": "application/vnd.saitowag.api+json;version=1.0"]
-        var authRequest = URLRequest(url: authRequestUrl)
-        authRequest.setValue("Basic \(user.base64Encoded)", forHTTPHeaderField: "Authorization")
-        authRequest.setValue("application/vnd.saitowag.api+json;version=1.0", forHTTPHeaderField: "Accept")
-        authRequest.httpMethod = "POST"
-        let task = URLSession.shared.dataTask(with: authRequest) { data, response, error in
-            
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-            }
-            
-            guard let httpResponse = response as? HTTPURLResponse,
-                       (200...299).contains(httpResponse.statusCode) else {
-                   print("Error with the response, unexpected status code: \(response)")
-                   return
-            }
-            
-            guard let data = data else {
-                print("No data")
-                return
-            }
-            do {
-                guard let decodedSerializationData = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-                      let authData = decodedSerializationData["data"] as? [String: Any],
-                      let token = authData["token"] as? String
-                      else { return }
-                AppSettings.shared.userAccessToken = token
-            } catch let decodingError {
-                print(decodingError)
+    func makeAuthRequest(user: User?,completionHandler: @escaping (APIRequestCompletionHandler) -> Void) {
+        guard let user = user else {
+             completionHandler(.failure(error: .signInError))
+            return
+        }
+        makeApiRequest(request: .authRequest(user: user)) { apiResponse in
+            completionHandler(apiResponse)
+        }
+    }
+    
+    private func makeApiRequest(request: AlzuraApiRequest, completionHandler: @escaping (APIRequestCompletionHandler) -> Void) {
+        AF.request(request.url, method: request.httpMethod, parameters: request.parameters, headers: request.httpHeader).responseData {  requestResult in
+            if let requestError = requestResult.error {
+                completionHandler(.failure(error: .alamofireError(error: requestError)))
+            } else {
+                guard let responseData = requestResult.data else {
+                    completionHandler(.failure(error: .errorDescription(errorText: "There is not data")))
+                    return
+                }
+                completionHandler(.success(data: responseData))
             }
         }
-        task.resume()
+        
     }
 }
 
 enum APIResponseCompletionHandler {
-    case success(data: [AlzuraAPIResponse])
-    case failure(errorDescription: String)
+    case success(successfulObtainedObject: APIResponseCompletionHandlerSuccess)
+    case failure(obtainedWithError: APIResponseCompletionHandlerError)
+}
+
+enum APIResponseCompletionHandlerSuccess {
+    case obtainedOrders(orders: [Order])
+    case otherData(data: Data)
 }
 
 protocol AlzuraAPIResponse: Codable {

@@ -7,12 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0402DC039A4BC6AEE18314F0 /* Pods_AlzuraTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2513E6F44A003FBF274E0CC /* Pods_AlzuraTestCase.framework */; };
+		38209076ED11708C823C50B4 /* OrdersListModuleInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46234791747E5FEE5794C8A5 /* OrdersListModuleInteractorInput.swift */; };
+		57470F41F484ADBABDE84900 /* OrdersListModuleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282DABCCC1CADB4F0A06628C /* OrdersListModuleRouter.swift */; };
+		588703D89645B221A6CC0851 /* OrdersListModuleModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8583E0116C8F2CB6B34DD61D /* OrdersListModuleModuleInput.swift */; };
+		5FCA6775CC1472F6A9363DE4 /* OrdersListModuleViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E904F7D417AB58E561837F /* OrdersListModuleViewInput.swift */; };
+		6819953D372F05EC99D97DAB /* OrdersListModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729003A0C4681754FDA8711F /* OrdersListModuleConfigurator.swift */; };
+		6AB0F517EE3480EA48C29BE3 /* OrdersListModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAC9E7718459755A6D786C0 /* OrdersListModulePresenter.swift */; };
+		77972A4D524B99A84A206585 /* OrdersListModuleViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32148263C0AC4068102CAB1 /* OrdersListModuleViewOutput.swift */; };
+		829BBEF022BA6A6D23EC22EB /* OrdersListModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E21B4156B37ED04121119C3 /* OrdersListModuleViewController.swift */; };
 		A22DD4CC28AFC043004F2E7A /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22DD4CB28AFC043004F2E7A /* KeychainManager.swift */; };
 		A22DD4CE28AFC56E004F2E7A /* UiButton+UIView+UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22DD4CD28AFC56E004F2E7A /* UiButton+UIView+UIImageExtensions.swift */; };
 		A230B4DC28B01B9200E6ABFD /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230B4DB28B01B9200E6ABFD /* ValidationManager.swift */; };
 		A230B4E028B0532600E6ABFD /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230B4DF28B0532600E6ABFD /* EncodableExtension.swift */; };
 		A230B4E328B062F300E6ABFD /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230B4E228B062F300E6ABFD /* AlertManager.swift */; };
 		A230B4E628B06B3A00E6ABFD /* AppStyleNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230B4E528B06B3A00E6ABFD /* AppStyleNavigationController.swift */; };
+		A293694529373F860018891F /* AlzuraApiUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293694429373F860018891F /* AlzuraApiUrl.swift */; };
+		A2936947293740900018891F /* AlzuraApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2936946293740900018891F /* AlzuraApiRequest.swift */; };
+		A293694A293745F70018891F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A2936949293745F70018891F /* Alamofire */; };
+		A293694D29376AAA0018891F /* APIResponseCompletionHandlerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293694C29376AAA0018891F /* APIResponseCompletionHandlerError.swift */; };
+		A293694F29376AF90018891F /* APIRequestCompletionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293694E29376AF90018891F /* APIRequestCompletionHandler.swift */; };
 		A2996CFF28B13C53004DFBB6 /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2996CFE28B13C52004DFBB6 /* SignInResponse.swift */; };
 		A2996D0128B14DFB004DFBB6 /* OrdersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2996D0028B14DFB004DFBB6 /* OrdersResponse.swift */; };
 		A2996D0328B15556004DFBB6 /* SegueHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2996D0228B15556004DFBB6 /* SegueHelper.swift */; };
@@ -36,15 +50,30 @@
 		A2BC683528AD544D003EFC28 /* Alzura+UIColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BC683428AD544D003EFC28 /* Alzura+UIColors.swift */; };
 		A2BC683828AD5558003EFC28 /* OrdersListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BC683728AD5558003EFC28 /* OrdersListVC.swift */; };
 		A2BC683C28AD5928003EFC28 /* ASStyleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BC683B28AD5928003EFC28 /* ASStyleHeaderView.swift */; };
+		B27A006F96BD893873DF99F2 /* OrdersListModuleInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59638D9F8442186C6C6ED9F /* OrdersListModuleInteractorOutput.swift */; };
+		CAA40A6E843913B348FDCFF6 /* OrdersListModuleRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D9272638FABFC5765DC8FF /* OrdersListModuleRouterInput.swift */; };
+		DEC867D482FE0D55238432B5 /* OrdersListModuleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F356A605F2870974FEA7034D /* OrdersListModuleInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		282DABCCC1CADB4F0A06628C /* OrdersListModuleRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrdersListModuleRouter.swift; sourceTree = "<group>"; };
+		3E21B4156B37ED04121119C3 /* OrdersListModuleViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrdersListModuleViewController.swift; sourceTree = "<group>"; };
+		44BD5CE74E3DA7B0F8551BE9 /* Pods-AlzuraTestCase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlzuraTestCase.debug.xcconfig"; path = "Target Support Files/Pods-AlzuraTestCase/Pods-AlzuraTestCase.debug.xcconfig"; sourceTree = "<group>"; };
+		46234791747E5FEE5794C8A5 /* OrdersListModuleInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrdersListModuleInteractorInput.swift; sourceTree = "<group>"; };
+		5DAC9E7718459755A6D786C0 /* OrdersListModulePresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrdersListModulePresenter.swift; sourceTree = "<group>"; };
+		729003A0C4681754FDA8711F /* OrdersListModuleConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrdersListModuleConfigurator.swift; sourceTree = "<group>"; };
+		73D9272638FABFC5765DC8FF /* OrdersListModuleRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrdersListModuleRouterInput.swift; sourceTree = "<group>"; };
+		8583E0116C8F2CB6B34DD61D /* OrdersListModuleModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrdersListModuleModuleInput.swift; sourceTree = "<group>"; };
 		A22DD4CB28AFC043004F2E7A /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		A22DD4CD28AFC56E004F2E7A /* UiButton+UIView+UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiButton+UIView+UIImageExtensions.swift"; sourceTree = "<group>"; };
 		A230B4DB28B01B9200E6ABFD /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
 		A230B4DF28B0532600E6ABFD /* EncodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableExtension.swift; sourceTree = "<group>"; };
 		A230B4E228B062F300E6ABFD /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		A230B4E528B06B3A00E6ABFD /* AppStyleNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyleNavigationController.swift; sourceTree = "<group>"; };
+		A293694429373F860018891F /* AlzuraApiUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlzuraApiUrl.swift; sourceTree = "<group>"; };
+		A2936946293740900018891F /* AlzuraApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlzuraApiRequest.swift; sourceTree = "<group>"; };
+		A293694C29376AAA0018891F /* APIResponseCompletionHandlerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseCompletionHandlerError.swift; sourceTree = "<group>"; };
+		A293694E29376AF90018891F /* APIRequestCompletionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestCompletionHandler.swift; sourceTree = "<group>"; };
 		A2996CFE28B13C52004DFBB6 /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
 		A2996D0028B14DFB004DFBB6 /* OrdersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersResponse.swift; sourceTree = "<group>"; };
 		A2996D0228B15556004DFBB6 /* SegueHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueHelper.swift; sourceTree = "<group>"; };
@@ -70,6 +99,12 @@
 		A2BC683428AD544D003EFC28 /* Alzura+UIColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alzura+UIColors.swift"; sourceTree = "<group>"; };
 		A2BC683728AD5558003EFC28 /* OrdersListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersListVC.swift; sourceTree = "<group>"; };
 		A2BC683B28AD5928003EFC28 /* ASStyleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASStyleHeaderView.swift; sourceTree = "<group>"; };
+		D2513E6F44A003FBF274E0CC /* Pods_AlzuraTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlzuraTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E25C9B078A90083BD64F0433 /* Pods-AlzuraTestCase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlzuraTestCase.release.xcconfig"; path = "Target Support Files/Pods-AlzuraTestCase/Pods-AlzuraTestCase.release.xcconfig"; sourceTree = "<group>"; };
+		F1E904F7D417AB58E561837F /* OrdersListModuleViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrdersListModuleViewInput.swift; sourceTree = "<group>"; };
+		F32148263C0AC4068102CAB1 /* OrdersListModuleViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrdersListModuleViewOutput.swift; sourceTree = "<group>"; };
+		F356A605F2870974FEA7034D /* OrdersListModuleInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrdersListModuleInteractor.swift; sourceTree = "<group>"; };
+		F59638D9F8442186C6C6ED9F /* OrdersListModuleInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrdersListModuleInteractorOutput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,17 +112,69 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0402DC039A4BC6AEE18314F0 /* Pods_AlzuraTestCase.framework in Frameworks */,
+				A293694A293745F70018891F /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3918248F7C3F3BC3F326A2C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D2513E6F44A003FBF274E0CC /* Pods_AlzuraTestCase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5C0E97C76702FB1DDD01D8FB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				44BD5CE74E3DA7B0F8551BE9 /* Pods-AlzuraTestCase.debug.xcconfig */,
+				E25C9B078A90083BD64F0433 /* Pods-AlzuraTestCase.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		5FAF8F24F5A90C2802FC2472 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				73D9272638FABFC5765DC8FF /* OrdersListModuleRouterInput.swift */,
+				282DABCCC1CADB4F0A06628C /* OrdersListModuleRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		63F291E541631BEB737BAAF5 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				46234791747E5FEE5794C8A5 /* OrdersListModuleInteractorInput.swift */,
+				F59638D9F8442186C6C6ED9F /* OrdersListModuleInteractorOutput.swift */,
+				F356A605F2870974FEA7034D /* OrdersListModuleInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		96EDFC41552C303C116C64FC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8583E0116C8F2CB6B34DD61D /* OrdersListModuleModuleInput.swift */,
+				5DAC9E7718459755A6D786C0 /* OrdersListModulePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A13AB9723D392B5E71466A9F /* OrdersListModule */ = {
+			isa = PBXGroup;
+			children = (
+				B85F757C0651483B11996266 /* View */,
+				96EDFC41552C303C116C64FC /* Presenter */,
+				63F291E541631BEB737BAAF5 /* Interactor */,
+				5FAF8F24F5A90C2802FC2472 /* Router */,
+				F2E29AE5C4581A0549B3D779 /* Configurator */,
+			);
+			path = OrdersListModule;
 			sourceTree = "<group>";
 		};
 		A230B4DD28B052FF00E6ABFD /* Networking */ = {
@@ -122,6 +209,15 @@
 				A230B4E528B06B3A00E6ABFD /* AppStyleNavigationController.swift */,
 			);
 			path = NavigationControllers;
+			sourceTree = "<group>";
+		};
+		A293694B29376A500018891F /* AlzuraAPICompletionHandler */ = {
+			isa = PBXGroup;
+			children = (
+				A293694C29376AAA0018891F /* APIResponseCompletionHandlerError.swift */,
+				A293694E29376AF90018891F /* APIRequestCompletionHandler.swift */,
+			);
+			path = AlzuraAPICompletionHandler;
 			sourceTree = "<group>";
 		};
 		A2996D0428B16785004DFBB6 /* Models */ = {
@@ -175,6 +271,7 @@
 				A2BC681328AD3F29003EFC28 /* AlzuraTestCase */,
 				A2BC681228AD3F29003EFC28 /* Products */,
 				5C0E97C76702FB1DDD01D8FB /* Pods */,
+				3918248F7C3F3BC3F326A2C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -198,6 +295,7 @@
 				A2BC682B28AD3FEE003EFC28 /* AuthenticationScene */,
 				A2BC681A28AD3F29003EFC28 /* Main.storyboard */,
 				A2BC681D28AD3F29003EFC28 /* AlzuraTestCase.xcdatamodeld */,
+				A13AB9723D392B5E71466A9F /* OrdersListModule */,
 			);
 			path = AlzuraTestCase;
 			sourceTree = "<group>";
@@ -254,7 +352,10 @@
 		A2BC683028AD4163003EFC28 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A293694B29376A500018891F /* AlzuraAPICompletionHandler */,
 				A2BC683128AD516B003EFC28 /* AlzuraAPIManager.swift */,
+				A293694429373F860018891F /* AlzuraApiUrl.swift */,
+				A2936946293740900018891F /* AlzuraApiRequest.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -296,6 +397,24 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
+		B85F757C0651483B11996266 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F1E904F7D417AB58E561837F /* OrdersListModuleViewInput.swift */,
+				F32148263C0AC4068102CAB1 /* OrdersListModuleViewOutput.swift */,
+				3E21B4156B37ED04121119C3 /* OrdersListModuleViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F2E29AE5C4581A0549B3D779 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				729003A0C4681754FDA8711F /* OrdersListModuleConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -303,15 +422,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2BC682828AD3F2D003EFC28 /* Build configuration list for PBXNativeTarget "AlzuraTestCase" */;
 			buildPhases = (
+				8D84C42EF14AD23F5B25390C /* [CP] Check Pods Manifest.lock */,
 				A2BC680D28AD3F28003EFC28 /* Sources */,
 				A2BC680E28AD3F28003EFC28 /* Frameworks */,
 				A2BC680F28AD3F28003EFC28 /* Resources */,
+				3906D8B1B430B1C0295F6E14 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = AlzuraTestCase;
+			packageProductDependencies = (
+				A2936949293745F70018891F /* Alamofire */,
+			);
 			productName = AlzuraTestCase;
 			productReference = A2BC681128AD3F29003EFC28 /* AlzuraTestCase.app */;
 			productType = "com.apple.product-type.application";
@@ -340,6 +464,9 @@
 				Base,
 			);
 			mainGroup = A2BC680828AD3F28003EFC28;
+			packageReferences = (
+				A2936948293745F70018891F /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = A2BC681228AD3F29003EFC28 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -363,6 +490,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3906D8B1B430B1C0295F6E14 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlzuraTestCase/Pods-AlzuraTestCase-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlzuraTestCase/Pods-AlzuraTestCase-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AlzuraTestCase/Pods-AlzuraTestCase-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D84C42EF14AD23F5B25390C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlzuraTestCase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A2BC680D28AD3F28003EFC28 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -377,6 +546,8 @@
 				A2BC681928AD3F29003EFC28 /* AuthenticationVC.swift in Sources */,
 				A230B4E628B06B3A00E6ABFD /* AppStyleNavigationController.swift in Sources */,
 				A2BC681528AD3F29003EFC28 /* AppDelegate.swift in Sources */,
+				A2936947293740900018891F /* AlzuraApiRequest.swift in Sources */,
+				A293694D29376AAA0018891F /* APIResponseCompletionHandlerError.swift in Sources */,
 				A2A38A9328AF067400E38958 /* AuthenticationManager.swift in Sources */,
 				A2BC681F28AD3F29003EFC28 /* AlzuraTestCase.xcdatamodeld in Sources */,
 				A2BC683828AD5558003EFC28 /* OrdersListVC.swift in Sources */,
@@ -393,6 +564,19 @@
 				A2BC681728AD3F29003EFC28 /* SceneDelegate.swift in Sources */,
 				A2996D0628B16797004DFBB6 /* OrderModel.swift in Sources */,
 				A2BC683C28AD5928003EFC28 /* ASStyleHeaderView.swift in Sources */,
+				5FCA6775CC1472F6A9363DE4 /* OrdersListModuleViewInput.swift in Sources */,
+				77972A4D524B99A84A206585 /* OrdersListModuleViewOutput.swift in Sources */,
+				829BBEF022BA6A6D23EC22EB /* OrdersListModuleViewController.swift in Sources */,
+				588703D89645B221A6CC0851 /* OrdersListModuleModuleInput.swift in Sources */,
+				6AB0F517EE3480EA48C29BE3 /* OrdersListModulePresenter.swift in Sources */,
+				38209076ED11708C823C50B4 /* OrdersListModuleInteractorInput.swift in Sources */,
+				B27A006F96BD893873DF99F2 /* OrdersListModuleInteractorOutput.swift in Sources */,
+				DEC867D482FE0D55238432B5 /* OrdersListModuleInteractor.swift in Sources */,
+				CAA40A6E843913B348FDCFF6 /* OrdersListModuleRouterInput.swift in Sources */,
+				57470F41F484ADBABDE84900 /* OrdersListModuleRouter.swift in Sources */,
+				A293694F29376AF90018891F /* APIRequestCompletionHandler.swift in Sources */,
+				A293694529373F860018891F /* AlzuraApiUrl.swift in Sources */,
+				6819953D372F05EC99D97DAB /* OrdersListModuleConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +718,7 @@
 		};
 		A2BC682928AD3F2D003EFC28 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44BD5CE74E3DA7B0F8551BE9 /* Pods-AlzuraTestCase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -563,6 +748,7 @@
 		};
 		A2BC682A28AD3F2D003EFC28 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E25C9B078A90083BD64F0433 /* Pods-AlzuraTestCase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -612,6 +798,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A2936948293745F70018891F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A2936949293745F70018891F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2936948293745F70018891F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A2BC681D28AD3F29003EFC28 /* AlzuraTestCase.xcdatamodeld */ = {
