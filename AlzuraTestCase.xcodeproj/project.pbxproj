@@ -26,7 +26,6 @@
 		A2936947293740900018891F /* AlzuraApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2936946293740900018891F /* AlzuraApiRequest.swift */; };
 		A293694A293745F70018891F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A2936949293745F70018891F /* Alamofire */; };
 		A293694D29376AAA0018891F /* APIResponseCompletionHandlerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293694C29376AAA0018891F /* APIResponseCompletionHandlerError.swift */; };
-		A293694F29376AF90018891F /* APIRequestCompletionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A293694E29376AF90018891F /* APIRequestCompletionHandler.swift */; };
 		A2996CFF28B13C53004DFBB6 /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2996CFE28B13C52004DFBB6 /* SignInResponse.swift */; };
 		A2996D0128B14DFB004DFBB6 /* OrdersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2996D0028B14DFB004DFBB6 /* OrdersResponse.swift */; };
 		A2996D0328B15556004DFBB6 /* SegueHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2996D0228B15556004DFBB6 /* SegueHelper.swift */; };
@@ -73,7 +72,6 @@
 		A293694429373F860018891F /* AlzuraApiUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlzuraApiUrl.swift; sourceTree = "<group>"; };
 		A2936946293740900018891F /* AlzuraApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlzuraApiRequest.swift; sourceTree = "<group>"; };
 		A293694C29376AAA0018891F /* APIResponseCompletionHandlerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseCompletionHandlerError.swift; sourceTree = "<group>"; };
-		A293694E29376AF90018891F /* APIRequestCompletionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestCompletionHandler.swift; sourceTree = "<group>"; };
 		A2996CFE28B13C52004DFBB6 /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
 		A2996D0028B14DFB004DFBB6 /* OrdersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersResponse.swift; sourceTree = "<group>"; };
 		A2996D0228B15556004DFBB6 /* SegueHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueHelper.swift; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				A293694C29376AAA0018891F /* APIResponseCompletionHandlerError.swift */,
-				A293694E29376AF90018891F /* APIRequestCompletionHandler.swift */,
 			);
 			path = AlzuraAPICompletionHandler;
 			sourceTree = "<group>";
@@ -574,7 +571,6 @@
 				DEC867D482FE0D55238432B5 /* OrdersListModuleInteractor.swift in Sources */,
 				CAA40A6E843913B348FDCFF6 /* OrdersListModuleRouterInput.swift in Sources */,
 				57470F41F484ADBABDE84900 /* OrdersListModuleRouter.swift in Sources */,
-				A293694F29376AF90018891F /* APIRequestCompletionHandler.swift in Sources */,
 				A293694529373F860018891F /* AlzuraApiUrl.swift in Sources */,
 				6819953D372F05EC99D97DAB /* OrdersListModuleConfigurator.swift in Sources */,
 			);

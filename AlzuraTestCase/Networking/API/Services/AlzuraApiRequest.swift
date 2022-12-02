@@ -48,3 +48,7 @@ enum AlzuraApiRequest {
         }
     }
 }
+
+protocol AlzuraAPIResponse: Codable {
+    
+}

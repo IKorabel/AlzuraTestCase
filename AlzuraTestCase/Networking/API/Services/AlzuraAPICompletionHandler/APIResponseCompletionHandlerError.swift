@@ -8,9 +8,10 @@
 import Foundation
 import Alamofire
 
-enum APIResponseCompletionHandlerError {
+enum APIResponseCompletionHandlerError: Error {
     case alamofireError(error: AFError)
     case signInError
+    case swiftError(error: Error)
     case errorDescription(errorText: String)
     
     var errorDescription: String {
@@ -21,6 +22,10 @@ enum APIResponseCompletionHandlerError {
             return "Please sign in"
         case .errorDescription(let errorText):
             return errorText
+        case .swiftError(let error):
+            return error.localizedDescription
+        default:
+            return localizedDescription
         }
     }
 }
